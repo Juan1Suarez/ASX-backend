@@ -122,6 +122,7 @@ export class GempresaCronService {
       console.log("Hora Australia:", fecha, hora);
 
       const indices = await this.cotizacionIndiceModel.find({
+        code: "ASX",
         fecha: fecha,
         hora: hora
       }).exec();
