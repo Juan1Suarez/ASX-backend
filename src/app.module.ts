@@ -18,7 +18,7 @@ import { CotizacionIndice, CotizacionIndiceSchema } from './indice/schema/schema
 @Module({
   imports: [
     ScheduleModule.forRoot(),
-    MongooseModule.forRoot('mongodb://localhost:27017/ASX'),
+    MongooseModule.forRoot( process.env.MONGO_URI || 'mongodb://localhost:27017/ASX'),
     MongooseModule.forFeature([
       {
         name: Empresa.name,
