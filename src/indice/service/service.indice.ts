@@ -29,6 +29,10 @@ export class IndiceService {
     return await this.cotizacionIndiceModel.find(filter).exec();
   }
 
+  async verIndicesCotizaciones(): Promise<CotizacionIndice[]> {
+    return await this.cotizacionIndiceModel.find().exec();
+  }
+
 
   async guardarIndices(): Promise<any> {
     const respuesta: AxiosResponse<Indice[]> = await axiosInstance.get("indices");

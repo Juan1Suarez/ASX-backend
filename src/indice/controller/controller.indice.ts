@@ -12,9 +12,15 @@ export class IndiceController {
     return await this.indiceService.guardarIndices();
   }
 
-  @Get()
+  @Get("/porCodigo")
   async verIndices(@Query('code') code?: string) {
     return await this.indiceService.verIndices(code);
+  }
+
+  
+  @Get()
+  async verIndicesCotizaciones() {
+    return await this.indiceService.verIndicesCotizaciones();
   }
 
   @Get('/getIndice/:codigoIndice')
